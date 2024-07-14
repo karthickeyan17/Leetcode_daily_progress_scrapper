@@ -285,3 +285,12 @@ invert-binary-tree,Easy
 time-based-key-value-store,Medium
 copy-list-with-random-pointer,Medium
 find-the-maximum-achievable-number,Easy
+maximum-score-from-removing-substrings,Medium
+binary-search,Easy
+search-in-rotated-sorted-array,Medium
+minimum-cost-for-cutting-cake-ii,Hard
+lexicographically-smallest-string-after-a-swap,Easy
+delete-nodes-from-linked-list-present-in-array,Medium
+number-of-atoms,Hard
+robot-collisions,Hard
+find-xor-sum-of-all-pairs-bitwise-and,Hard
