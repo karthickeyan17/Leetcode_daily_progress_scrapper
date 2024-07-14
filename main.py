@@ -1,8 +1,9 @@
 import pandas as pd 
 import scraper as Scraper
 from datetime import datetime ,timedelta
+import streamlit as st
 import os
-
+st.title("LEETCODE STATS TRACKER")
 DB_PATH= "./Student_db.csv"
 OUTPUT_PATH = "./leetcode_stats.csv"
 def fetch_stats(date):
@@ -29,10 +30,10 @@ def fetch_stats(date):
     else:
         res.update(df2)
         res.to_csv(OUTPUT_PATH)
-    print(res)   
+    print(res)  
+    st.write(res) 
     
 if __name__ == "__main__":
-
     date = datetime.now().date()
     print("Fetching for date:",date)
     fetch_stats(date)
