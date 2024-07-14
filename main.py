@@ -7,8 +7,6 @@ DB_PATH= "./Student_db.csv"
 OUTPUT_PATH = "./leetcode_stats.csv"
 def fetch_stats(date):
     df = pd.read_csv(DB_PATH)
-    if os.path.isfile(OUTPUT_PATH):
-        res=pd.read_csv(OUTPUT_PATH,header=[0, 1],index_col=[0])
     df2=None
     for index, row in df.iterrows():
         problems_byDate = Scraper.getProblems(row['Leetcode ID'])
@@ -23,13 +21,12 @@ def fetch_stats(date):
         else:
             df2=pd.concat([df2,pivot_df],axis=0)
 
-    if not os.path.isfile(OUTPUT_PATH):
-        df2.to_csv(OUTPUT_PATH)
-        res=df2
-    else:
+    if os.path.isfile(OUTPUT_PATH):
+        res=pd.read_csv(OUTPUT_PATH,header=[0, 1],index_col=[0])
         res.update(df2)
         res.to_csv(OUTPUT_PATH)
-    print(res)   
+    else:
+         df2.to_csv(OUTPUT_PATH)
     
 if __name__ == "__main__":
 
