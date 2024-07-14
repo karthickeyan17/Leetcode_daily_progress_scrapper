@@ -1,4 +1,4 @@
-# Leetcode Profile Scraper
+# Leetcode Progress Tracker
 
 ## Objective:
 
